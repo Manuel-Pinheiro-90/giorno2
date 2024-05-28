@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { iArticle  } from '../../models/article';
 import { iPost } from '../../models/ipost';
 import { PostsService } from '../../service/posts.service';
 @Component({
@@ -34,13 +34,15 @@ firstPost!:iPost;
 
   this.alltags=this.postsSvc.getTags()
 
-this.postsSvc.toggleClick()
+
 
 
 
     }
 
 
+    toggleClick() {
+      this.isClicked = !this.isClicked;
 
 }
 
@@ -50,5 +52,7 @@ this.postsSvc.toggleClick()
 
 
 
+
+}
 
 

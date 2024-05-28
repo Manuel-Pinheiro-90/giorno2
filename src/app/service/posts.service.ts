@@ -7,7 +7,7 @@ import { iPost } from '../models/ipost';
 })
 export class PostsService {
 
-  isClicked = false;
+
   articleArr: iPost[] = [{
     "id": 1,
     "title": "His mother had always taught him",
@@ -293,11 +293,6 @@ return alltags
 }
 
 
-
-toggleClick() {
-  this.isClicked = !this.isClicked;
-
-}
 
 
 
