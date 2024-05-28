@@ -287,9 +287,23 @@ export class PostsService {
   getAllposts(): iPost[] {return this.articleArr}
 
 //recupera tutti i tag  DALL'ARRAY OF interno
-getTags():string[]{
-let alltags:string []=[...new Set(this.articleArr.flatMap(tag =>tag.tags))]
-return alltags
+
+getUniqueTags(){
+
+  return this.articleArr.reduce((tags:string[], post) => {
+
+      post.tags.forEach(t => {
+        if(!tags.includes(t)){
+            tags.push(t)
+        }
+      });
+
+    return tags
+  },[])
+}
+
+getPostsByTag(tag:string){
+  return this.articleArr.filter(post => post.tags.includes(tag))
 }
 
 

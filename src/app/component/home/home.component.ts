@@ -32,7 +32,7 @@ firstPost!:iPost;
 
       this.articleArr = this.postsSvc.getAllposts();
 
-  this.alltags=this.postsSvc.getTags()
+  this.alltags=this.postsSvc.getUniqueTags()
 
 
 
@@ -41,11 +41,13 @@ firstPost!:iPost;
     }
 
 
-    toggleClick(td:string) {
-console.log(td)
+    filterByTag(event:any,tag:string){
+      console.log(event);
 
+      event.target.classList.add('activeFilter')
 
-}
+      this.articleArr = this.postsSvc.getPostsByTag(tag)
+    }
 
 
 

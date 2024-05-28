@@ -43,7 +43,7 @@
       <button
         class="btn btn-secondary m-1"
         *ngFor="let tg of alltags"
-        (click)="toggleClick(tg)"
+        (click)="filterByTag($event, tg)"
       >
         {{ tg | uppercase }}
       </button>
