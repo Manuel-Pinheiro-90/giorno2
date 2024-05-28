@@ -40,10 +40,15 @@
 
     <h2 class="text-center my-5 text-white">Tutti i tag</h2>
     <div class="text-center">
+      <!--bottone che attiva il filtro sui tag li rende cliccabili illuminando il bottone e prende solo gli articoli con quel nome!-->
       <button
         class="btn btn-secondary m-1"
         *ngFor="let tg of alltags"
         (click)="filterByTag($event, tg)"
+        [ngClass]="{
+          'btn-success': filter === tg,
+          'btn-secondary': filter !== tg
+        }"
       >
         {{ tg | uppercase }}
       </button>

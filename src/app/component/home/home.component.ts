@@ -10,6 +10,7 @@ import { PostsService } from '../../service/posts.service';
 export class HomeComponent {
 
 
+  filter!:string;
 articleArr:iPost[]=[]
 firstPost!:iPost;
   randomPosts:iPost[] = [];
@@ -45,7 +46,7 @@ firstPost!:iPost;
       console.log(event);
 
       event.target.classList.add('activeFilter')
-
+      this.filter= tag
       this.articleArr = this.postsSvc.getPostsByTag(tag)
     }
 

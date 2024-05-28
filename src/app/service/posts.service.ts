@@ -7,7 +7,7 @@ import { iPost } from '../models/ipost';
 })
 export class PostsService {
 
-
+filter!:string;
   articleArr: iPost[] = [{
     "id": 1,
     "title": "His mother had always taught him",
