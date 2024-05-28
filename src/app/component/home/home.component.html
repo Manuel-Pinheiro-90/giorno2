@@ -1,0 +1,77 @@
+<main>
+  <div class="container">
+    <h1 class="text-center my-5 text-white">Articolo in evidenza</h1>
+    <div class="row">
+      <div class="col-12 bg-secondary text-white p-5" *ngIf="firstPost">
+        <h3>{{ firstPost.title }}</h3>
+        <p>{{ firstPost.body }}</p>
+        <a href="#" class="link-light mx-2">
+          {{ firstPost.tags[0] }}
+        </a>
+        <a href="#" class="link-light mx-2">
+          {{ firstPost.tags[1] }}
+        </a>
+        <a href="#" class="link-light mx-2">
+          {{ firstPost.tags[2] }}
+        </a>
+      </div>
+      <a [routerLink]="[firstPost.id]" class="btn btn-primary">Dettaglio</a>
+    </div>
+    <h4>articoli consigliati</h4>
+
+    <h2 class="text-center my-5 text-white">
+      Potrebbero piacerti questi posts
+    </h2>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3" *ngFor="let post of randomPosts">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.body }}</p>
+
+            <div class="d-flex">
+              <a href="#" class="card-text mx-2">{{ post.tags[0] }}</a>
+              <a href="#" class="card-text mx-2">{{ post.tags[1] }}</a>
+              <a href="#" class="card-text mx-2">{{ post.tags[2] }}</a>
+            </div>
+            <a [routerLink]="[post.id]" class="btn btn-primary">Dettaglio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-center my-5 text-white">Tutti i tag</h2>
+    <div class="text-center">
+      <button
+        class="btn btn-secondary m-1"
+        *ngFor="let tg of alltags"
+        [ngClass]="{ 'btn-secondary': isClicked, 'btn-success': !isClicked }"
+        (click)="toggleClick()"
+      >
+        {{ tg | uppercase }}
+      </button>
+    </div>
+
+    <h2 class="text-center my-5 text-white">Tutti gli articoli</h2>
+    <h1>single post</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 my-1" *ngFor="let p of articleArr">
+          <app-single-post [p]="p">
+            <!--roba per riempire il saingle post-->
+            <form>
+              <input
+                type="text"
+                class="form-control"
+                name="titolo"
+                placeholder="Odio"
+                [(ngModel)]="p.title"
+              />
+              <!--passo il titolo al single post e riempio il form -->
+            </form>
+          </app-single-post>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
