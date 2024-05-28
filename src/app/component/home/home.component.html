@@ -43,8 +43,7 @@
       <button
         class="btn btn-secondary m-1"
         *ngFor="let tg of alltags"
-        [ngClass]="{ 'btn-secondary': isClicked, 'btn-success': !isClicked }"
-        (click)="toggleClick()"
+        (click)="toggleClick(tg)"
       >
         {{ tg | uppercase }}
       </button>

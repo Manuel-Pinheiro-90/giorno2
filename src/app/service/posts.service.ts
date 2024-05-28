@@ -286,7 +286,7 @@ export class PostsService {
 //funzione che recupera tutti i post
   getAllposts(): iPost[] {return this.articleArr}
 
-
+//recupera tutti i tag  DALL'ARRAY OF interno
 getTags():string[]{
 let alltags:string []=[...new Set(this.articleArr.flatMap(tag =>tag.tags))]
 return alltags

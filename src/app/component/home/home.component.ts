@@ -9,7 +9,7 @@ import { PostsService } from '../../service/posts.service';
 })
 export class HomeComponent {
 
-  isClicked = false;
+
 articleArr:iPost[]=[]
 firstPost!:iPost;
   randomPosts:iPost[] = [];
@@ -41,10 +41,12 @@ firstPost!:iPost;
     }
 
 
-    toggleClick() {
-      this.isClicked = !this.isClicked;
+    toggleClick(td:string) {
+console.log(td)
+
 
 }
+
 
 
 
