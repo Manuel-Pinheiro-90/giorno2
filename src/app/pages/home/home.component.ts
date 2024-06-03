@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { iArticle  } from '../../models/article';
+
 import { iPost } from '../../models/ipost';
 import { PostsService } from '../../service/posts.service';
 @Component({

@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ActivePostsComponent } from './component/active-posts/active-posts.component';
-import { InactivePostsComponent } from './component/inactive-posts/inactive-posts.component';
-import { PostDetailComponent } from './component/post-detail/post-detail.component';
+import { ActivePostsComponent } from './pages/active-posts/active-posts.component';
+
+
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { HomeComponent } from './component/home/home.component';
-import { SinglePostComponent } from './component/single-post/single-post.component';
+
+
 import { FormsModule } from '@angular/forms';
 import { Direttiva1Directive } from './direttive/direttiva1.directive';
 
@@ -19,11 +19,11 @@ import { Direttiva1Directive } from './direttive/direttiva1.directive';
   declarations: [
     AppComponent,
     ActivePostsComponent,
-    InactivePostsComponent,
-    PostDetailComponent,
+
+
     NavbarComponent,
-    HomeComponent,
-    SinglePostComponent,
+
+
     Direttiva1Directive,
 
 

@@ -12,7 +12,9 @@
           >{{ tag | uppercase }}</span
         >
       </div>
-      <a [routerLink]="[firstPost.id]" class="btn btn-primary">Dettaglio</a>
+      <a [routerLink]="['/post-detail', firstPost.id]" class="btn btn-primary"
+        >Dettaglio</a
+      >
     </div>
     <h4>articoli consigliati</h4>
 
@@ -32,7 +34,9 @@
               appDirettiva1
               >{{ tag | uppercase }}</span
             >
-            <a [routerLink]="[post.id]" class="btn btn-primary">Dettaglio</a>
+            <a [routerLink]="['/post-detail', post.id]" class="btn btn-primary"
+              >Dettaglio</a
+            >
           </div>
         </div>
       </div>

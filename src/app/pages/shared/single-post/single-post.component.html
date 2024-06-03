@@ -7,7 +7,9 @@
         tag | uppercase
       }}</span>
     </div>
-    <a [routerLink]="[p.id]" class="btn btn-primary">Dettaglio</a>
+    <a [routerLink]="['/post-detail', p.id]" class="btn btn-primary"
+      >Dettaglio</a
+    >
     <ng-content *ngIf="show"></ng-content>
     <!--qui faccio spownare il form scritto in home-->
     <button class="btn btn-success" (click)="toggleForm()">Hide</button>
